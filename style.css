@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Outfit:wght@100..900&display=swap');
+
+
+/* Even before I began to code out my design, I plannend out
+ the way I was going execute the strucutre of my code for 
+ better readability.   I also needed to add an overlfow: 
+ hidden since the sizing made the scrollbar pop up, I then 
+ positioned the .attributions as relative in order to 
+ position it for better visibility. */
+
+body {
+    background-color: hsl(47, 88%, 63%);
+    font-size: 1rem;
+    font-family: 'Figtree', sans-serif;
+    overflow: hidden;
+}
+
+/* Started with placing card in the center of the Viewport*/
+
+.card-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Next I needed to fix the sizing of the images
+in order to better see the sizing of the card */
+.top-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* The sizing and positioning of this profile image 
+with the h4 was the only one I could find, since I 
+groupd them together into a flex container and 
+proceeded to adjust the image so the words, "Greg
+Hooper" was aligning next to it at the center*/
+
+.profile-image {
+   margin-right: 10px;
+   height: 40px;
+   position: relative;
+   top: 10px;
+}
+
+/* I then proceeded to edit the card and used the 
+max-width from the previous code for the same 
+measurements */
+
+.card{
+    background-color: hsl(0, 0%, 100%);
+    max-width: 340px;
+    padding: 25px 25px;
+    border-radius: 17px;
+    border: 1px solid black;
+    box-shadow: 10px 10px 1px black;
+    font-weight: 500;
+    margin: 0 1em;
+}
+
+/* Before proceeding with the rest of the design I 
+made sure to add the font-weights from the start, and 
+it was easier to group them instead of writing a font-
+weight for each od the tags*/
+
+.learning, h4 {
+    font-weight: 800;
+}
+
+/* I added a span with a class .Learning in order to 
+target the h2 with a yellow background */ 
+
+.learning {
+    background-color: hsl(47, 88%, 63%);
+    padding: 7px 17px;
+    border-radius: 5px;
+}
+
+/* With this selector I was able to select the first p
+tag in order to change it's color, while not changing
+the other p tag color */
+
+p:first-of-type {
+    color: hsl(0, 0%, 7%);
+}
+
+/* Changed the color of the bottom p tag */
+
+.text p {
+    color: hsl(0, 0%, 42%);
+    line-height: 24px;
+}
+
+/* This is the container that I used in order to adjust
+the image with the p tag. It was easier to do but at 
+first I was trying to see if I could float it to the 
+right. However, I felt that flex-box was better, 
+especailyl considering overall responsiveness */
+
+.greg-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.bottom-image {
+    width: 15px;
+}
+
+
+.attribution { 
+    font-size: 15px; text-align: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 4em;
+ }
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+.attribution p {
+    margin-left: 5px;
+}
+
+@media (max-width: 464px) {
+
+    .attribution {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        bottom: 7em;
+    }
+}
+
+@media (max-width: 414px) {
+    body {
+        font-size: 15px;
+    }
+
+    .text p {
+        font-size: 14px;
+    }
+}
